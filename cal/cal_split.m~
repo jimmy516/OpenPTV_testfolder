@@ -1,0 +1,24 @@
+%Split calibration pictures into four images
+
+
+    whole=imread(sprintf('paged.tif'));
+
+      images1=imcrop(whole,[0 0 850 850]);
+      images2=imcrop(whole,[847 0 850 850]);
+      images3=imcrop(whole,[0 851 850 850]);
+      images4=imcrop(whole,[847 851 850 850]);
+    
+      for i=1:850
+          for j=1:850
+              if images1(i,j)<=50;
+                  then 
+          end
+      end
+      
+               
+      imwrite(images1,sprintf('cam1.tif'));
+      imwrite(images2,sprintf('cam2.tif'));
+      imwrite(images3,sprintf('cam3.tif'));
+      imwrite(images4,sprintf('cam4.tif'));           
+
+        
